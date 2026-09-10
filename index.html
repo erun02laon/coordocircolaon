@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIRCO+ — Annuaire de circonscription</title>
+<meta name="description" content="Application autonome pour retrouver les coordonnées des écoles, de l'équipe de circonscription et des mairies.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏫</text></svg>">
+<!-- Polices Google (chargement progressif, non bloquant : l'appli reste 100% fonctionnelle hors-ligne avec les polices système) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">🏫</div>
+      <div class="brand-text">
+        <h1>CIRCO+</h1>
+        <span>Annuaire de circonscription</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-footer">Application autonome · données locales</div>
+  </aside>
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      <div class="search-wrap">
+        <span class="ic">🔎</span>
+        <input type="text" id="global-search" placeholder="Rechercher une école, une commune, un directeur, un membre de l'équipe...">
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Basculer le mode sombre">🌙</button>
+      </div>
+      <div class="gsearch-results" id="gsearch-results"></div>
+    </header>
+
+    <!-- ACCÈS RAPIDE — affiché sur mobile / format téléphone -->
+    <nav class="quick-access" id="quick-access" aria-label="Accès rapide">
+      <button class="quick-item" data-view="dashboard"><span>📊</span><small>Accueil</small></button>
+      <button class="quick-item" data-view="ecoles"><span>🏫</span><small>Écoles</small></button>
+      <button class="quick-item" data-view="circo"><span>👥</span><small>Équipe</small></button>
+      <button class="quick-item" data-view="mairies"><span>🏛</span><small>Mairies</small></button>
+      <button class="quick-item" data-view="favoris"><span>⭐</span><small>Favoris</small></button>
+      <button class="quick-item" data-view="parametres"><span>⚙️</span><small>Réglages</small></button>
+    </nav>
+
+    <main class="content" id="content"></main>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay"></div>
+<div class="toast" id="toast"></div>
+
+<script src="js/xlsx.full.min.js"></script>
+<script src="data/data.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+(function () {
+  function updateMobileQuickAccessHeight() {
+    if (window.innerWidth > 768) {
+      document.documentElement.style.removeProperty('--mobile-quick-access-height');
+      return;
+    }
+    const selectors = [
+      '.quick-access', '.quick-access-mobile', '.mobile-quick-access',
+      '.access-rapide', '.acces-rapide', '.top-actions',
+      '.mobile-actions', 'nav.mobile', 'nav.mobile-nav',
+      '.mobile-nav', '.mobile-navbar'
+    ];
+    let el = null;
+    for (const selector of selectors) {
+      el = document.querySelector(selector);
+      if (el) break;
+    }
+    if (el) {
+      document.documentElement.style.setProperty(
+        '--mobile-quick-access-height',
+        Math.ceil(el.getBoundingClientRect().height + 6) + 'px'
+      );
+    }
+  }
+  window.addEventListener('load', updateMobileQuickAccessHeight);
+  window.addEventListener('resize', updateMobileQuickAccessHeight);
+  window.addEventListener('orientationchange', updateMobileQuickAccessHeight);
+})();
+</script>
+
+
+<script>
+(function(){
+  const sels=[
+    '.quick-access','.quick-access-mobile','.mobile-quick-access',
+    '.access-rapide','.acces-rapide','.acces-mobile','.mobile-access',
+    '.mobile-actions','.mobile-navbar','.mobile-nav','.mobile-menu',
+    '.mobile-header','.header-mobile','.top-mobile','.top-actions'
+  ];
+  function update(){
+    if(innerWidth>768){
+      document.documentElement.style.removeProperty('--mobile-access-height');
+      return;
+    }
+    let bar=null;
+    for(const sel of sels){bar=document.querySelector(sel);if(bar)break;}
+    if(!bar)return;
+    bar.classList.add('mobile-fixed-access');
+    const h=Math.ceil(bar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--mobile-access-height',(h+6)+'px');
+  }
+  addEventListener('load',update);
+  addEventListener('resize',update);
+  addEventListener('orientationchange',()=>setTimeout(update,200));
+})();
+</script>
+</body>
+</html>
