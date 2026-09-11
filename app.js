@@ -59,7 +59,7 @@ function copyText(text, label){
    1. ÉTAT / STOCKAGE LOCAL
 --------------------------------------------------------- */
 const LS_KEYS = {
-  data: "circoplus_data_override_v2",
+  data: "circoplus_data_override_v3",
   favs: "circoplus_favorites",
   recents: "circoplus_recents",
   theme: "circoplus_theme",
@@ -97,8 +97,20 @@ function hasSettingsAccess(){
 function loadData(){
   try{
     const raw = localStorage.getItem(LS_KEYS.data);
-    if(raw) return JSON.parse(raw);
-  }catch(e){ console.warn("Données locales invalides, retour aux données par défaut."); }
+    if(raw){
+      const local = JSON.parse(raw);
+      // Sécurité : ne jamais conserver une ancienne version incomplète.
+      if(local && Array.isArray(local.ecoles) && Array.isArray(local.mairies) &&
+         local.ecoles.length >= DEFAULT_DATA.ecoles.length &&
+         local.mairies.length >= DEFAULT_DATA.mairies.length){
+        return local;
+      }
+      localStorage.removeItem(LS_KEYS.data);
+    }
+  }catch(e){
+    console.warn("Données locales invalides, retour aux données par défaut.");
+    localStorage.removeItem(LS_KEYS.data);
+  }
   return DEFAULT_DATA;
 }
 function saveDataOverride(data){
@@ -145,7 +157,8 @@ function pushRecent(type, id){
 --------------------------------------------------------- */
 function findMairieForEcole(ecole){
   if(!ecole.commune) return null;
-  return state.data.mairies.find(m => m.commune === ecole.commune) || null;
+  const commune = normalize(ecole.commune);
+  return state.data.mairies.find(m => normalize(m.commune) === commune) || null;
 }
 
 /* ---------------------------------------------------------

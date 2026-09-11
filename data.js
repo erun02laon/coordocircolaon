@@ -1,5 +1,4 @@
-// Données par défaut - générées depuis APPLI_CIRCO(1).xlsx
-// Les 45 écoles correspondent exactement à la feuille « Ecoles » du fichier Excel de référence.
+// Données par défaut — synchronisées avec APPLI_CIRCO(2).xlsx
 const DEFAULT_DATA = {
   "circo": [
     {
@@ -404,7 +403,7 @@ const DEFAULT_DATA = {
       "decharges": "jeudi et 1V/3",
       "horaires": "8h45/11h45   13h30/16h30",
       "secteurCollege": "Lenain",
-      "commune": ""
+      "commune": "AULNOIS SOUS LAON"
     },
     {
       "id": "ecole-30",
@@ -416,7 +415,7 @@ const DEFAULT_DATA = {
       "decharges": "1/mois",
       "horaires": "8h50/12h00   13h20/16h30",
       "secteurCollege": "Lenain",
-      "commune": ""
+      "commune": "CHAMBRY"
     },
     {
       "id": "ecole-31",
@@ -452,7 +451,7 @@ const DEFAULT_DATA = {
       "decharges": "mardi",
       "horaires": "8h30/11h30   13h30/16h30",
       "secteurCollege": "Lenain",
-      "commune": ""
+      "commune": "FESTIEUX"
     },
     {
       "id": "ecole-34",
@@ -619,6 +618,23 @@ const DEFAULT_DATA = {
     },
     {
       "id": "mairie-2",
+      "commune": "AULNOIS SOUS LAON",
+      "maire": "M. DUMAY",
+      "portable": "",
+      "adresse": "1 Rue du Tour de Place, 02000 Aulnois-sous-Laon",
+      "telephone": "03 23 22 80 11",
+      "email": "mairieaulnois@gmail.com",
+      "syndicatScolaire": "",
+      "presidentSyndicat": "",
+      "emailSyndicat": "",
+      "telSyndicat": "",
+      "communauteCommunes": "",
+      "presidentCC": "M. DELHAYE",
+      "telCC": "03 23 22 31 00",
+      "emailCC": "contact@ca-paysdelaon.fr"
+    },
+    {
+      "id": "mairie-3",
       "commune": "BOURGUIGNON SOUS MONTBAV",
       "maire": "Mme VILLER",
       "portable": "",
@@ -635,7 +651,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-3",
+      "id": "mairie-4",
       "commune": "BRANCOURT EN LAONNOIS",
       "maire": "Mme ROUYER",
       "portable": "",
@@ -652,7 +668,7 @@ const DEFAULT_DATA = {
       "emailCC": "accueil@picardiedeschateaux.fr"
     },
     {
-      "id": "mairie-4",
+      "id": "mairie-5",
       "commune": "CESSIERES",
       "maire": "M. BERTHELOT",
       "portable": "",
@@ -669,7 +685,24 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-5",
+      "id": "mairie-6",
+      "commune": "CHAMBRY",
+      "maire": "Mme LEFEBVRE",
+      "portable": "",
+      "adresse": "39 bis rue Jean Jaurès 02000 Chambry",
+      "telephone": "03 23 23 03 55",
+      "email": "mairie@02chambry.fr",
+      "syndicatScolaire": "NON",
+      "presidentSyndicat": "",
+      "emailSyndicat": "",
+      "telSyndicat": "",
+      "communauteCommunes": "OUI",
+      "presidentCC": "M. DELHAYE",
+      "telCC": "03 23 22 31 00",
+      "emailCC": "https://www.ca-paysdelaon.fr/contact/"
+    },
+    {
+      "id": "mairie-7",
       "commune": "CHAVIGNON",
       "maire": "Mme BOURNONVILLE",
       "portable": "06.81.53.39.69",
@@ -686,7 +719,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-6",
+      "id": "mairie-8",
       "commune": "FAUCOUCOURT",
       "maire": "M. CENTONZE",
       "portable": "",
@@ -703,7 +736,24 @@ const DEFAULT_DATA = {
       "emailCC": "accueil@picardiedeschateaux.fr"
     },
     {
-      "id": "mairie-7",
+      "id": "mairie-9",
+      "commune": "FESTIEUX",
+      "maire": "M. BUVRY",
+      "portable": "06 24 03 98 44",
+      "adresse": "8 rue de la Croix-aux-Arbres, 02840 Festieux",
+      "telephone": "03 23 23 03 86",
+      "email": "mairiedefestieux@gmail.com",
+      "syndicatScolaire": "NON",
+      "presidentSyndicat": "",
+      "emailSyndicat": "",
+      "telSyndicat": "",
+      "communauteCommunes": "OUI",
+      "presidentCC": "M. DELHAYE",
+      "telCC": "03 23 22 31 00",
+      "emailCC": "https://www.ca-paysdelaon.fr/contact/"
+    },
+    {
+      "id": "mairie-10",
       "commune": "MERLIEUX ET FOUQUEROLLES",
       "maire": "M. CLERMONT",
       "portable": "",
@@ -720,7 +770,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-8",
+      "id": "mairie-11",
       "commune": "PINON",
       "maire": "M. GRAZINA BOULANDE",
       "portable": "",
@@ -737,7 +787,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-9",
+      "id": "mairie-12",
       "commune": "PREMONTRE",
       "maire": "M.DOMINGUEZ",
       "portable": "",
@@ -754,7 +804,7 @@ const DEFAULT_DATA = {
       "emailCC": "accueil@picardiedeschateaux.fr"
     },
     {
-      "id": "mairie-10",
+      "id": "mairie-13",
       "commune": "ROYAUCOURT ET CHAILVET",
       "maire": "M. LE RUDULIER",
       "portable": "",
@@ -771,14 +821,14 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-11",
+      "id": "mairie-14",
       "commune": "SUZY",
       "maire": "M. BERTHELOT",
       "portable": "",
       "adresse": "1 ruelle Buet 02320 Cessières",
       "telephone": "03 23 24 14 49",
       "email": "mairie.cessieressuzy02@gmail.com",
-      "syndicatScolaire": "",
+      "syndicatScolaire": "NON",
       "presidentSyndicat": "",
       "emailSyndicat": "",
       "telSyndicat": "",
@@ -788,14 +838,14 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-12",
+      "id": "mairie-15",
       "commune": "URCEL",
       "maire": "M. PIERSON",
       "portable": "07 71 11 26 08",
       "adresse": "16, rue de l'église     02000 URCEL",
       "telephone": "03 23 21 60 20",
       "email": "mairie-urcel@outlook.fr",
-      "syndicatScolaire": "",
+      "syndicatScolaire": "NON",
       "presidentSyndicat": "",
       "emailSyndicat": "",
       "telSyndicat": "",
@@ -805,7 +855,7 @@ const DEFAULT_DATA = {
       "emailCC": "accueil@picardiedeschateaux.fr"
     },
     {
-      "id": "mairie-13",
+      "id": "mairie-16",
       "commune": "VAUXAILLON",
       "maire": "M. LEJEUNE",
       "portable": "",
@@ -822,14 +872,14 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-14",
+      "id": "mairie-17",
       "commune": "ATHIES SOUS LAON",
       "maire": "Mme DELPLANQUE",
       "portable": "",
       "adresse": "place du 11 novembre 02840 Athies-sous-Laon",
       "telephone": "03 23 24 52 38",
       "email": "mairie.athies02@wanado.fr",
-      "syndicatScolaire": "",
+      "syndicatScolaire": "NON",
       "presidentSyndicat": "",
       "emailSyndicat": "",
       "telSyndicat": "",
@@ -839,7 +889,7 @@ const DEFAULT_DATA = {
       "emailCC": "https://www.ca-paysdelaon.fr/contact/"
     },
     {
-      "id": "mairie-15",
+      "id": "mairie-18",
       "commune": "BRUYERES ET MONTBERAULT",
       "maire": "M. MONTCOURTOIS",
       "portable": "",
@@ -856,7 +906,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-16",
+      "id": "mairie-19",
       "commune": "EPPES",
       "maire": "M. AMY",
       "portable": "",
@@ -873,7 +923,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-17",
+      "id": "mairie-20",
       "commune": "LAON",
       "maire": "M. DELHAYE",
       "portable": "",
@@ -890,7 +940,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-18",
+      "id": "mairie-21",
       "commune": "CHIVY LES ETOUVELLES",
       "maire": "M. RABOUILLE",
       "portable": "",
@@ -907,7 +957,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-19",
+      "id": "mairie-22",
       "commune": "CREPY",
       "maire": "Mme MEZZAROBBA",
       "portable": "",
@@ -924,7 +974,7 @@ const DEFAULT_DATA = {
       "emailCC": "https://www.ca-paysdelaon.fr/contact/"
     },
     {
-      "id": "mairie-20",
+      "id": "mairie-23",
       "commune": "FOURDRAIN",
       "maire": "M. DESEUSTE",
       "portable": "",
@@ -941,7 +991,7 @@ const DEFAULT_DATA = {
       "emailCC": "direction@ctlf.fr"
     },
     {
-      "id": "mairie-21",
+      "id": "mairie-24",
       "commune": "MONS EN LAONNOIS",
       "maire": "M. CHARLES",
       "portable": "",
@@ -958,7 +1008,7 @@ const DEFAULT_DATA = {
       "emailCC": "https://www.ca-paysdelaon.fr/contact/"
     },
     {
-      "id": "mairie-22",
+      "id": "mairie-25",
       "commune": "PRESLES ET THIERNY",
       "maire": "M. KYRIACOS",
       "portable": "",
@@ -975,7 +1025,7 @@ const DEFAULT_DATA = {
       "emailCC": ""
     },
     {
-      "id": "mairie-23",
+      "id": "mairie-26",
       "commune": "VIVAISE",
       "maire": "M. VIANAS",
       "portable": "",
@@ -986,10 +1036,10 @@ const DEFAULT_DATA = {
       "presidentSyndicat": "",
       "emailSyndicat": "",
       "telSyndicat": "",
-      "communauteCommunes": "NON",
-      "presidentCC": "",
-      "telCC": "",
-      "emailCC": ""
+      "communauteCommunes": "OUI",
+      "presidentCC": "M. DELHAYE",
+      "telCC": "03 23 22 31 00",
+      "emailCC": "https://www.ca-paysdelaon.fr/contact/"
     }
   ]
 };
