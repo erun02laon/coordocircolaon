@@ -61,8 +61,8 @@
 <div class="toast" id="toast"></div>
 
 <script src="js/xlsx.full.min.js"></script>
-<script src="data/data.js"></script>
-<script src="js/app.js"></script>
+<script src="data/data.js?v=20260911"></script>
+<script src="js/app.js?v=20260911"></script>
 
 <script>
 (function () {
@@ -95,31 +95,5 @@
 })();
 </script>
 
-
-<script>
-(function(){
-  const sels=[
-    '.quick-access','.quick-access-mobile','.mobile-quick-access',
-    '.access-rapide','.acces-rapide','.acces-mobile','.mobile-access',
-    '.mobile-actions','.mobile-navbar','.mobile-nav','.mobile-menu',
-    '.mobile-header','.header-mobile','.top-mobile','.top-actions'
-  ];
-  function update(){
-    if(innerWidth>768){
-      document.documentElement.style.removeProperty('--mobile-access-height');
-      return;
-    }
-    let bar=null;
-    for(const sel of sels){bar=document.querySelector(sel);if(bar)break;}
-    if(!bar)return;
-    bar.classList.add('mobile-fixed-access');
-    const h=Math.ceil(bar.getBoundingClientRect().height);
-    document.documentElement.style.setProperty('--mobile-access-height',(h+6)+'px');
-  }
-  addEventListener('load',update);
-  addEventListener('resize',update);
-  addEventListener('orientationchange',()=>setTimeout(update,200));
-})();
-</script>
 </body>
 </html>

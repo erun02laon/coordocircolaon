@@ -81,3 +81,10 @@ L'accès au menu **Paramètres** est protégé par mot de passe. Le mot de passe
 
 ### Accès rapide mobile
 Sur téléphone, une barre d’accès rapide est affichée en haut de l’application (Accueil, Écoles, Équipe, Mairies, Favoris et Réglages). Le bouton Réglages conserve la protection par mot de passe.
+
+
+## Correctif 11/09/2026
+- Données des 26 mairies synchronisées avec `APPLI_CIRCO(2).xlsx`.
+- Communes des écoles AULNOIS SOUS LAON, CHAMBRY et FESTIEUX corrigées.
+- Anciennes données locales v2 invalidées pour éviter que les téléphones gardent les 23 mairies.
+- Recherche de mairie rendue tolérante aux accents et variations de ponctuation.
